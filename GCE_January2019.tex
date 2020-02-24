@@ -40,13 +40,17 @@ Let $E:= [0, 1] - S_{\mathbb{Q}} = [0, 1] \bigcap (S_{\mathbb{Q}})^{c}$ where $S
 
 $\textbf{Solution:}$
 
-This proposition is true. Since $S_{\mathbb{Q}}$ is a countable set and it is equivalent with the positive integers in the interval $[0, 1]$, we can enumerate the set $S_{\mathbb{Q}}$ as $\{a_{n} | n \in \mathbb{N} \}$. And then we consider the union $\bigcup_{n = 1}^{+ \infty}(a_{n} - \frac{1}{8^{n}}, a_{n} + \frac{1}{8^{n}})$, it is an open set, we denote it as $A$, then $A = \bigcup_{n = 1}^{+ \infty}(a_{n} - \frac{1}{8^{n}}, a_{n} + \frac{1}{8^{n}})$. We introduce the set $A^{*} = A \bigcap [0, 1]$, then $A^{*} \subset [0,1]$ and $S_{\mathbb{Q}} \subset A^{*}$, and we have $(A^{*})^{c} \subset (S_{\mathbb{Q}})^{c}$. Then we know that $[0, 1] \bigcap (A^{*})^{c} \subset E$.
+This proposition is true. Since $S_{\mathbb{Q}}$ is a countable set, there exists a bijection between $S_{\mathbb{Q}}$ and the positive rational number in the interval $[0, 1]$, so we can enumerate the set $S_{\mathbb{Q}}$ as $\{a_{n} | n \in \mathbb{N} \}$. That is to say we have $S_{\mathbb{Q}} = \{a_{n} | n \in \mathbb{N} \}$. And then we consider the union 
+$$\bigcup_{n = 1}^{+ \infty}(a_{n} - \frac{\epsilon}{2^{n}}, a_{n} + \frac{\epsilon}{2^{n}}),$$
+it is an open set, we denote it as $A$, then $A = \bigcup_{n = 1}^{+ \infty}(a_{n} - \frac{\epsilon}{2^{n}}, a_{n} + \frac{\epsilon}{2^{n}})$. And when $\epsilon \to 0$, we know that $A \subset [0, 1]$ and $S_{\mathbb{Q}} \subset A$.
 
-Since $A^{*}$ is an open set, then $[0, 1] \bigcap (A^{*})^{c}$ is a closed set. We denote $F = [0, 1] \bigcap (A^{*})^{c}$, since the measure of set $A$ is
+Since $A$ is an open set, then $[0, 1] \bigcap (A)^{c}$ is a closed set. We denote $F = [0, 1] \bigcap (A)^{c}$, since the measure of set $A$ is
 \begin{equation*}
-    m(A) = 2 \sum_{n = 1}^{+ \infty}  \frac{1}{8^{n}} = \frac{2}{7},
+    m(A) = 2 \sum_{n = 1}^{+ \infty}  \frac{\epsilon}{2^{n}} = 2 \epsilon,
 \end{equation*}
-then $m(A^{*}) \leq \frac{2}{7}$. So, we have $m(F) \geq \frac{5}{7} > 0$, then the set $F$ is uncountable. Since $F \subset E$ and it is both closed and uncountable, then the proposition is true.
+then we have $m(F) = 1 - 2 \epsilon > 0$, so, the set $F$ is uncountable. Since $F \subset E$ and it is both closed and uncountable, then the proposition is true.
+
+For any countable set $S$, $S \subset [0, 1]$, let $E = [0, 1] - S$, we can find a closed, uncountable subset $F \subset E$, and we have the supremum of the measure of $F$ is 1.
 
 \noindent\rule[0.25\baselineskip]{\textwidth}{0.5pt}
 
@@ -137,11 +141,11 @@ g(x) =
 \end{equation*}
 obviously $g(x)$ is not continuous in $(0, 1)$, but we have $g_{n} (x) = \int_{0}^{1} P_{n}(x -t)g(t) \, d t = 0, \forall x \in (0, 1)$. Then $g_{n} (x)$ is continuous in $[0, 1]$. Since $g(x)$ is not continuous in $(0, 1)$, we can say that $g_{n}(x)$ is not uniformly convergent to $g(x)$ in $(0, 1)$.
 
-Secondly, we can show that $g_{n}(x)$ convergent to $g(x)$ in $L^{1}((0, 1))$. Since continuous function is dense in $L^{1}$ space, then for all $\epsilon > 0$, there exist a continuous function $f(x)$, such that $\|f- g \|_{1} < \epsilon$. We define the $f_{n}(x)$ as the section (ii), then we have
+Secondly, we can show that $g_{n}(x)$ convergent to $g(x)$ in $L^{1}((0, 1))$. Since the continuous functions with compact support are dense in $L^{1}$ space, then for all $\epsilon > 0$, there exist a continuous function $f(x) \in C_{c}([0, 1])$, such that $\|f- g \|_{1} < \epsilon$. We define the $f_{n}(x)$ as the section (ii), then we have
 \begin{equation*}
 \|g- g_{n} \|_{1} \leq  \|g- f \|_{1} + \|f- f_{n} \|_{1} + \|f_{n}- g_{n} \|_{1}.
 \end{equation*}
-Since $f_{n}$ is uniformly converges to $f$, for all $\epsilon > 0$, there exists a $N in \mathbb{N}$, when $n > N$, we have $\|f- f_{n} \|_{1} < \epsilon$. And for the same $\epsilon$, by the property that continuous function is dense in $L^{1}$ space, we have $\|f- g \|_{1} < \epsilon$. Next we verify that $\|f_{n}- g_{n} \|_{1} < \epsilon$. Since
+Since $f_{n}$ is uniformly converges to $f$, for all $\epsilon > 0$, there exists a $N \in \mathbb{N}$, when $n > N$, we have $\|f- f_{n} \|_{1} < \epsilon$. And for the same $\epsilon$, by the property that continuous function is dense in $L^{1}$ space, we have $\|f- g \|_{1} < \epsilon$. Next we verify that $\|f_{n}- g_{n} \|_{1} < \epsilon$. Since
 \begin{eqnarray*}
 \|f_{n}- g_{n} \|_{1} &=& \int_{0}^{1} \Big{|} \int_{0}^{1}  P_{n}(x-t) g(t) - \int_{0}^{1}  P_{n}(x-t) f(t) \, d t \Big{|} d x  \\
 &=& \int_{0}^{1} \Big{|} \int_{0}^{1}  P_{n}(x-t) (g(t) - f(t)) \, d t \Big{|} d x  \\
